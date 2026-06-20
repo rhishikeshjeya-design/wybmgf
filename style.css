@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+body {
+    background-color: #ffeef2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.title {
+    color: #d63384;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.btn {
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Screen 2 Icon Grid */
+.icon-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.choice-icon {
+    font-size: 3.5rem;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.choice-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Screen 3 Drag & Drop Elements */
+.draggable-item {
+    font-size: 3rem;
+    position: absolute;
+    top: 150px;
+    cursor: grab;
+    z-index: 10;
+    touch-action: none; /* Prevents mobile screen scrolling while dragging */
+}
+
+.bowls-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 150px;
+    position: relative;
+}
+
+.bowl {
+    width: 120px;
+    height: 120px;
+    border: 4px dashed #ffb3c1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    position: relative;
+}
+
+#bowl-no {
+    position: relative;
+    transition: all 0.1s ease-out;
+}
+
+.bowl-label {
+    font-weight: bold;
+    color: #ff4d6d;
+    font-size: 1.1rem;
+}

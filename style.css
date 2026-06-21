@@ -175,10 +175,10 @@ body {
     flex-direction: column;
 }
 
-/* Button on Screen 4 - Lifted safely clear of mobile navigation bars */
+/* Button on Screen 4 - Mobile Default (Safe from phone gesture bars) */
 .gift-button {
     position: absolute !important;
-    bottom: 110px !important; /* Lifted up to prevent gesture bar clipping */
+    bottom: 110px !important; /* Perfect height for phones */
     left: 50%;
     transform: translateX(-50%); /* Centers the button perfectly horizontal */
     background: transparent;
@@ -193,6 +193,12 @@ body {
 
 .gift-button:active {
     transform: translateX(-50%) scale(0.95); /* Maintains horizontal alignment when clicked */
+}
+
+@media (min-width: 768px) {
+    .gift-button {
+        bottom: 45px !important; /* Moves it safely down below the heart on laptops/desktops */
+    }
 }
 
 @keyframes fadeInButton {

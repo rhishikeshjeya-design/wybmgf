@@ -202,8 +202,8 @@ function startHeartAnimation() {
     const heartPoints = [];
     const maxAttempts = 6000; 
     
-    const targetCount = window.innerWidth < 600 ? 120 : 340;
-    const minDist = window.innerWidth < 600 ? 12 : 20;
+    const targetCount = window.innerWidth < 600 ? 190 : 340;
+    const minDist = window.innerWidth < 600 ? 15 : 20;
 
     let attempts = 0;
 

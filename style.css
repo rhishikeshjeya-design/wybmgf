@@ -175,10 +175,10 @@ body {
     flex-direction: column;
 }
 
-/* Button on Screen 4 - Fixed positioning for mobile scaling profiles */
+/* Button on Screen 4 - Lifted safely clear of mobile navigation bars */
 .gift-button {
     position: absolute !important;
-    bottom: 60px;
+    bottom: 110px !important; /* Lifted up to prevent gesture bar clipping */
     left: 50%;
     transform: translateX(-50%); /* Centers the button perfectly horizontal */
     background: transparent;

@@ -138,12 +138,18 @@ body {
     overflow: hidden;
 }
 
+/* FIX: Breaking the flexbox inheritance so canvas and button absolute math maps correctly on mobile */
+#screen4.active {
+    display: block !important;
+}
+
 #heartCanvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
     background-color: transparent !important;
 }
 
@@ -169,10 +175,12 @@ body {
     flex-direction: column;
 }
 
-/* Button on Screen 4 - Positioned at the bottom */
+/* Button on Screen 4 - Fixed positioning for mobile scaling profiles */
 .gift-button {
-    position: absolute;
-    bottom: 50px;
+    position: absolute !important;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the button perfectly horizontal */
     background: transparent;
     border: 2px solid #ff1e4b;
     color: #ff1e4b;
@@ -180,6 +188,11 @@ body {
     opacity: 0; /* Hidden initially */
     animation: fadeInButton 2s ease-in forwards;
     animation-delay: 3s; /* Appears after heart starts forming */
+    white-space: nowrap; /* Prevents text layout cracking on narrower phones */
+}
+
+.gift-button:active {
+    transform: translateX(-50%) scale(0.95); /* Maintains horizontal alignment when clicked */
 }
 
 @keyframes fadeInButton {

@@ -115,3 +115,104 @@ body {
     color: #ff4d6d;
     font-size: 1.1rem;
 }
+
+.sub-title {
+    color: #ffb3c1;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/* Screen 4: Deeply Faded Full-Screen Wallpaper Backdrop */
+#screen4 {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)), url('us.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#heartCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent !important;
+}
+
+/* Screen 5 Background (Same faded look as Screen 4) */
+#screen5 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)), url('us.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none; /* Hidden by default */
+    box-sizing: border-box;
+}
+
+#screen5.active {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Button on Screen 4 - Positioned at the bottom */
+.gift-button {
+    position: absolute;
+    bottom: 50px;
+    background: transparent;
+    border: 2px solid #ff1e4b;
+    color: #ff1e4b;
+    z-index: 100;
+    opacity: 0; /* Hidden initially */
+    animation: fadeInButton 2s ease-in forwards;
+    animation-delay: 3s; /* Appears after heart starts forming */
+}
+
+@keyframes fadeInButton {
+    to { opacity: 1; }
+}
+
+/* Glass panel for the Spotify code */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 85%;
+    max-width: 400px;
+}
+
+#spotify-code {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.white-text {
+    color: white !important;
+}
+
+.return-btn {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    padding: 10px 20px;
+}
